@@ -22,12 +22,6 @@ def get_data(filename):
         reader = csv.reader(file)
         next(reader) # skip the header row
 
-        # num_of_words = len(list(reader))
-        # It's not len() which is causing the generator to reach the end,
-        # but it's the list() which turns the generator into a list by taking
-        # an item one by one from the iterator, resulting in the generator being
-        # exhausted (i.e finished).
-
         eng_words, thai_words, pronunciations, comments = [], [], [], []
 
         for row in reader:
